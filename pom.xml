@@ -19,6 +19,7 @@
                 </dependency>
             </dependencies>
         </profile>
+
         <profile>
             <id>produce</id>
         </profile>
