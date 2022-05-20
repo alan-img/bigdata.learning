@@ -1,10 +1,11 @@
 package com.dahuatech.jdbc
 
 /**
- * @author alan
+ * @author qinjiawei
+ * @todo
  */
 object JDBCUtils {
   def main(args: Array[String]): Unit = {
-    println("dfasdf")
+    println("test")
   }
 }
