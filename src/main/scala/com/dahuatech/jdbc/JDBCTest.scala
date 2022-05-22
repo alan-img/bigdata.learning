@@ -9,6 +9,7 @@ object JDBCTest {
 
     val conn: Connection = JDBCUtils.getConnection
     println(conn)
+    conn.commit()
 
   }
 }
