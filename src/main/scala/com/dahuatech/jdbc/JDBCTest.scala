@@ -1,15 +1,16 @@
 package com.dahuatech.jdbc
 
 import java.sql.Connection
-
 import com.dahuatech.utils.JDBCUtils
+
+import javax.sql.DataSource
 
 object JDBCTest {
   def main(args: Array[String]): Unit = {
 
-    val conn: Connection = JDBCUtils.getConnection
+    val dataSource: DataSource = JDBCUtils.getDataSource
+    val conn: Connection = dataSource.getConnection
     println(conn)
-    conn.commit()
 
   }
 }

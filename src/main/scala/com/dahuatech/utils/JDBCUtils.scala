@@ -1,8 +1,11 @@
 package com.dahuatech.utils
 
+import com.alibaba.druid.pool.DruidDataSourceFactory
+
 import java.io.InputStream
 import java.sql.{Connection, DriverManager}
 import java.util.Properties
+import javax.sql.DataSource
 
 /**
  * @author qinjiawei
@@ -18,13 +21,13 @@ object JDBCUtils {
   prop.load(is)
 
   // parse config param
-  val username: String = prop.getProperty("jdbc.username")
-  val password: String = prop.getProperty("jdbc.password")
-  val url: String = prop.getProperty("jdbc.url")
-  Class.forName(driverClassName)
+  val username: String = prop.getProperty("username")
+  val password: String = prop.getProperty("password")
+  val url: String = prop.getProperty("url")
+  val driverClassName: String = prop.getProperty("driverClassName")
 
   // instance register driver class
-  val driverClassName: String = prop.getProperty("jdbc.driverClassName")
+  Class.forName(driverClassName)
 
   /**
    * obtain database connection
@@ -33,6 +36,14 @@ object JDBCUtils {
   def getConnection: Connection = {
     val conn: Connection = DriverManager.getConnection(url, username, password)
     conn
+  }
+
+  /**
+   * obtain druid database connection pool
+   */
+  def getDataSource: DataSource = {
+    val dataSource: DataSource = DruidDataSourceFactory.createDataSource(prop)
+    dataSource
   }
 
 }
