@@ -10,6 +10,7 @@ object JDBCTest {
 
     val dataSource: DataSource = JDBCUtils.getDataSource
     val conn: Connection = dataSource.getConnection
+
     println(conn)
 
   }
