@@ -11,10 +11,10 @@ import javax.sql.DataSource
  * @author qinjiawei
  * @todo
  */
-object JDBCUtils {
+object HiveUtils {
 
   // load jdbc config file
-  val is: InputStream = getClass.getClassLoader.getResourceAsStream("jdbc.properties")
+  val is: InputStream = getClass.getClassLoader.getResourceAsStream("hive.properties")
   val prop = new Properties()
 
   // load config file content to prop
