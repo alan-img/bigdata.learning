@@ -1,8 +1,11 @@
 package com.dahuatech.jdbc
 
 import com.dahuatech.utils.HiveUtils
+import org.apache.commons.dbutils.QueryRunner
+import org.apache.commons.dbutils.handlers.BeanListHandler
 
 import java.sql.{Connection, PreparedStatement, ResultSet}
+import java.util
 import javax.sql.DataSource
 
 object HiveClient {
@@ -10,14 +13,13 @@ object HiveClient {
 
     val dataSource: DataSource = HiveUtils.getDataSource
     val conn: Connection = dataSource.getConnection
-    val ps: PreparedStatement = conn.prepareStatement("select * from t_admin")
+    val ps: PreparedStatement = conn.prepareStatement("select * from stu")
     val resultSet: ResultSet = ps.executeQuery()
     while (resultSet.next()) {
-      val username: String = resultSet.getString(4)
-      val password: String = resultSet.getString(3)
-      val email: String = resultSet.getString(5)
+      val name: String = resultSet.getString(1)
+      val age: String = resultSet.getString(2)
 
-      println(s"username = ${username}, password = ${password}, emila = ${email}")
+      println(s"name = ${name}, age = ${age}")
     }
 
   }
