@@ -1,11 +1,13 @@
 # bigdata.learning
 ***
-```java
-int a = 10
-```
-- afd
-- adf
-- asf
-- sdf
-
+- HDFS
+- YARN
+- MAPREDUCE
+- HIVE
+- HBASE
+- SPARK
+- FLINK
+- KAFKA
+- ZOOKEEPER
+- REDIS
 
