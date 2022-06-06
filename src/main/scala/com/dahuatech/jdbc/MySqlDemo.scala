@@ -10,7 +10,7 @@ import org.apache.commons.dbutils.{DbUtils, QueryRunner}
 import java.util
 import javax.sql.DataSource
 
-object MySqlClient {
+object MySqlDemo {
   def main(args: Array[String]): Unit = {
 
     val dataSource: DataSource = MySqlUtils.getDataSource

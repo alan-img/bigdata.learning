@@ -1,2 +1,3 @@
 .idea/
-bigdata.learning.iml
+target/
+*.iml

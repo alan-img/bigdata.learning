@@ -8,7 +8,7 @@ import java.sql.{Connection, PreparedStatement, ResultSet}
 import java.util
 import javax.sql.DataSource
 
-object HiveClient {
+object HiveDemo {
   def main(args: Array[String]): Unit = {
 
     val dataSource: DataSource = HiveUtils.getDataSource
